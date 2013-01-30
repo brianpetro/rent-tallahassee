@@ -1,45 +1,49 @@
-<div class="row">
-	<div class="span9">	
-		<h1>Listing classifieds</h1>
+<div class="span9">	
+	<h1>Listing classifieds</h1>
 
-		<table class="table table-hover">
+	<table class="table table-hover">
+		<tr>
+			<th><h2>Classifieds</h2></th>
+		</tr>
+
+		<% @classifieds.each do |classified| %>
 			<tr>
-				<th><h2>Classifieds</h2></th>
+				<td>
+					<div class="well">
+					    <a href="https://twitter.com/intent/tweet?button_hashtag=ClassifiedSite&text=<%= classified.headline %>" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta">Tweet #Classified-Site</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						<ul>
+							<li><h3><%= classified.headline %></h3></li>
+							<li><%= classified.content %></li>
+							<li><%= link_to 'Show', classified %></li>
+							<li><%= link_to 'Edit', edit_classified_path(classified) %></li>
+							<li><%= link_to 'Destroy', classified, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+						</ul>
+					</div>
+				</td>
 			</tr>
-
-			<% @classifieds.each do |classified| %>
-				<tr>
-					<td>
-						<div class="well">
-							<ul>
-								<li><h3><%= classified.headline %></h3></li>
-								<li><%= classified.content %></li>
-								<li><%= link_to 'Show', classified %></li>
-								<li><%= link_to 'Edit', edit_classified_path(classified) %></li>
-								<li><%= link_to 'Destroy', classified, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-							</ul>
-						</div>
-					</td>
-				</tr>
-			<% end %>
-		</table>
+		<% end %>
+	</table>
+</div>
+<div class="span3">
+	<br>
+	<div class="well well-small">
+		<h3>Connect with 'Niche Classified Site' to get updated on new listings.</h3>
+			<%= link_to 'Connect', new_user_registration_path(:plan => 'silver'), class: 'btn btn-block' %>
 	</div>
-	<div class="span3">
-		<br>
-		<div class="well well-small">
-			<h4>This Niche Classified Ads Site</h4>
-			<span class="lead">Lorem Ipsum dalor.... Lorem Ipsum dalor.... Lorem Ipsum dalor....Lorem Ipsum dalor.... </span>
-		</div>
-		<div class="well well-small">
-			<%= link_to 'New Classified', new_classified_path, class: 'btn btn-primary btn-block btn-large' %>
-		</div>
-		<div class="well">
-			<h5>Post a Listing</h5>
-			<ol>
-				<li>Create a New Classified.</li>
-				<li>Make sure you include these specifics in the listing.</li>
-				<li>Complete 'Payment for Review' and get listed!</li>
-			</ol>
-		</div>	
+	<div class="well well-small">
+		<h4>This Niche Classified Ads Site</h4>
+		<span class="lead">Lorem Ipsum dalor.... Lorem Ipsum dalor.... Lorem Ipsum dalor....Lorem Ipsum dalor.... </span>
 	</div>
+	<div class="well well-small">
+		<%= link_to 'New Classified', new_classified_path, class: 'btn btn-primary btn-block btn-large' %>
+	</div>
+	<div class="well">
+		<h5>Post a Listing</h5>
+		<ol>
+			<li>Create a New Classified.</li>
+			<li>Make sure you include these specifics in the listing.</li>
+			<li>Complete 'Payment for Review' and get listed!</li>
+		</ol>
+	</div>	
 </div>
