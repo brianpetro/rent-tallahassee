@@ -10,7 +10,7 @@ ClassifiedSite::Application.routes.draw do
   get "content/silver"
   get "content/platinum"
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'classifieds#index'
   end
   root :to => "classifieds#index"
   devise_for :users, :controllers => { :registrations => 'registrations' }
