@@ -29,7 +29,7 @@
 	<br>
 	<div class="well well-small">
 		<h3>Connect with 'Niche Classified Site' to get updated on new listings.</h3>
-			<%= link_to 'Connect', new_user_registration_path, class: 'btn btn-block' %>
+			<%= render 'subscribers/email_form' %>
 	</div>
 	<div class="well well-small">
 		<h4>This Niche Classified Ads Site</h4>
