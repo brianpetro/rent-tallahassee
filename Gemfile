@@ -33,3 +33,7 @@ gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 
 gem 'bootswatch-rails'
+
+## Gems Not in Classified-Site Master
+gem 'meta-tags', require: 'meta_tags'
+gem 'sitemap_generator'

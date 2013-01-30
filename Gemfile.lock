@@ -100,6 +100,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.2.6)
+      actionpack
     mime-types (1.19)
     multi_json (1.5.0)
     nokogiri (1.5.6)
@@ -161,6 +163,8 @@ GEM
     simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    sitemap_generator (3.4)
+      builder
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -210,6 +214,7 @@ DEPENDENCIES
   figaro (>= 0.5.3)
   jquery-rails
   launchy (>= 2.1.2)
+  meta-tags
   pg
   quiet_assets (>= 1.0.1)
   rails (= 3.2.11)
@@ -217,6 +222,7 @@ DEPENDENCIES
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   simple_form (>= 2.0.4)
+  sitemap_generator
   sqlite3
   stripe (>= 1.7.4)
   stripe_event (>= 0.4.0)
