@@ -1,4 +1,7 @@
 ClassifiedSite::Application.routes.draw do
+  resources :classifieds
+
+
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
   get "content/silver"
