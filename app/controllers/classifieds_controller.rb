@@ -3,7 +3,7 @@ class ClassifiedsController < ApplicationController
   # GET /classifieds.json
   def index
     @classifieds = Classified.all
-
+    @subscriber = Subscriber.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @classifieds }
