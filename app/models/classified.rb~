@@ -1,5 +1,5 @@
 class Classified < ActiveRecord::Base
-  attr_accessible :content, :headline, :email
+  attr_accessible :content, :headline, :subscribers_email
   has_many :subscribers
   accepts_nested_attributes_for :subscribers
   
