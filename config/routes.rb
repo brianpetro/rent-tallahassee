@@ -1,4 +1,7 @@
 ClassifiedSite::Application.routes.draw do
+  resources :subscribers
+
+
   resources :classifieds
 
 
