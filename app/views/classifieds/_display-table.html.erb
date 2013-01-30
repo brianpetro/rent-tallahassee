@@ -1,0 +1,24 @@
+<table class="table table-hover">
+	<% @classifieds.each do |classified| %>
+		<tr>
+			<td>
+				<div class="well">
+					<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= classified.headline %>" class="twitter-hashtag-button pull-right" data-lang="en" data-related="jasoncosta">Tweet #RentTallahassee</a>
+					<ul class="unstyled">
+						<li><h4><%= link_to truncate(classified.headline, length: 140), classified_path(classified) %></h4></li>
+						<li><%= truncate classified.content, length: 100 %></li>
+					</ul>
+					<%= link_to 'Show', classified, class: 'btn btn-inverse btn-block' %>
+					<% if user_signed_in? %>
+						<% if current_user.has_role? :admin %>
+							<div class="pull-right">
+								<%= link_to 'Edit', edit_classified_path(classified), class: 'btn btn-mini btn-danger' %>
+								<%= link_to 'Destroy', classified, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+			</td>
+		</tr>
+	<% end %>
+</table>

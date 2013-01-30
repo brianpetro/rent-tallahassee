@@ -1,39 +1,19 @@
 <div class="span8">	
-	<h1>Listing classifieds</h1>
+	<div class="hero-unit">
+		<h2>Listing Premium Tallahassee Apartments, Condos, and Houses for Rent.</h2>
+	</div>
+	<%= render 'display-table' %>
 
-	<table class="table table-hover">
-		<tr>
-			<th><h2>Classifieds</h2></th>
-		</tr>
-
-		<% @classifieds.each do |classified| %>
-			<tr>
-				<td>
-					<div class="well">
-					    <a href="https://twitter.com/intent/tweet?button_hashtag=ClassifiedSite&text=<%= classified.headline %>" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta">Tweet #Classified-Site</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-						<ul>
-							<li><h3><%= classified.headline %></h3></li>
-							<li><%= classified.content %></li>
-							<li><%= link_to 'Show', classified %></li>
-							<li><%= link_to 'Edit', edit_classified_path(classified) %></li>
-							<li><%= link_to 'Destroy', classified, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-						</ul>
-					</div>
-				</td>
-			</tr>
-		<% end %>
-	</table>
 </div>
 <div class="span4">
 	<br>
 	<div class="well well-small">
-		<h3>Connect with 'Niche Classified Site' to get updated on new listings.</h3>
+		<h3>Connect for New Rent Listings via Email.</h3>
 			<%= render 'subscribers/form' %>
 	</div>
 	<div class="well well-small">
-		<h4>This Niche Classified Ads Site</h4>
-		<span class="lead">Lorem Ipsum dalor.... Lorem Ipsum dalor.... Lorem Ipsum dalor....Lorem Ipsum dalor.... </span>
+		<h4>Get Listed</h4>
+		<span class="lead">Use the button below to list a rental property on this page!</span>
 	</div>
 	<div class="well well-small">
 		<%= link_to 'New Classified', new_classified_path, class: 'btn btn-primary btn-block btn-large' %>
