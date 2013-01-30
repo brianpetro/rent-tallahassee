@@ -1,4 +1,5 @@
 class ClassifiedsController < ApplicationController
+	load_and_authorize_resource
   # GET /classifieds
   # GET /classifieds.json
   def index
