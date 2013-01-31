@@ -1,4 +1,7 @@
 ClassifiedSite::Application.routes.draw do
+  resources :feed_entries
+
+
   resources :subscribers
 
 

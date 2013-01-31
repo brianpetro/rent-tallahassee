@@ -36,3 +36,4 @@ gem 'bootswatch-rails'
 
 ## Gems Not in Classified-Site Master
 gem 'sitemap_generator'
+gem 'feedzirra'
