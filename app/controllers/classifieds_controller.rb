@@ -6,6 +6,7 @@ class ClassifiedsController < ApplicationController
     @classifieds = Classified.all
     @subscriber = Subscriber.new
     @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
+    @web_results = FeedEntry.all(:limit => 10, :order => "published_at desc")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @classifieds }
