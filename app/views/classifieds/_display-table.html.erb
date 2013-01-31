@@ -4,7 +4,10 @@
 			<td>
 				<div class="well">
 					<span class="badge badge-warning">Verified</span>
-					<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= classified.headline %> http://rent-tallahassee.com/classifieds/<%= classified.id %>" class="twitter-hashtag-button pull-right" data-lang="en" data-related="jasoncosta">Tweet #RentTallahassee</a>
+					<div class="social pull-right">
+						<div class="fb-send" data-colorscheme="light" data-href="http://www.rent-tallahassee.com/classifieds/<%= classified.id %>"></div> 
+						<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= classified.headline %> http://rent-tallahassee.com/classifieds/<%= classified.id %>" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta" style="margin-bottom: -4px;">Tweet #RentTallahassee</a>
+					</div>
 					<ul class="unstyled">
 						<li><h4><%= link_to truncate(classified.headline, length: 140), classified_path(classified) %></h4></li>
 						<li><%= truncate classified.content, length: 100 %></li>
