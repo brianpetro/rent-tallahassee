@@ -7,8 +7,10 @@ class Ability
       can :manage, :all
     else
     	can :read, Classified
-    	can :read, Subscriber
-
+    	can :create, Subscriber
+			if user.has_role? :silver
+				can :manage, Classified
+			end
     end
   end
 end
