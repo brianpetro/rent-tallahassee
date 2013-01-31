@@ -7,6 +7,12 @@
 					<ul class="unstyled">
 						<li><h4><%= link_to truncate(classified.headline, length: 140), classified_path(classified) %></h4></li>
 						<li><%= truncate classified.content, length: 100 %></li>
+						<li>
+							<img src="http://lorempixel.com/40/40/city/1">
+							<img src="http://lorempixel.com/40/40/city/2">
+							<img src="http://lorempixel.com/40/40/city/3">
+							<img src="http://lorempixel.com/40/40/city/4">
+						</li>
 					</ul>
 					<%= link_to 'Show', classified, class: 'btn btn-inverse btn-block' %>
 					<% if user_signed_in? %>
