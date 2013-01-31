@@ -11,6 +11,12 @@ class Ability
 			if user.has_role? :silver
 				can :manage, Classified
 			end
+			if user.has_role? :gold
+				can :manage, Classified
+			end
+			if user.has_role? :platinum
+				can :manage, Classified
+			end
     end
   end
 end
