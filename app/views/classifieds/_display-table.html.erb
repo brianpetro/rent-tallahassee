@@ -3,6 +3,7 @@
 		<tr>
 			<td>
 				<div class="well">
+					<span class="badge badge-warning">Verified</span>
 					<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= classified.headline %> http://rent-tallahassee.com/classifieds/<%= classified.id %>" class="twitter-hashtag-button pull-right" data-lang="en" data-related="jasoncosta">Tweet #RentTallahassee</a>
 					<ul class="unstyled">
 						<li><h4><%= link_to truncate(classified.headline, length: 140), classified_path(classified) %></h4></li>
@@ -27,10 +28,11 @@
 			</td>
 		</tr>
 	<% end %>
+	
 	<% @web_results.each do |web| %>
 		<tr>
 			<td>
-				<div class="well">
+				<div class="alert">
 					<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= web.name %> <%= web.url %>" class="twitter-hashtag-button pull-right" data-lang="en" data-related="jasoncosta">Tweet #RentTallahassee</a>
 					<ul class="unstyled">
 						<li><h4><%= link_to truncate(web.name, length: 140), web.url %></h4></li>
