@@ -1,15 +1,31 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Headline:</b>
-  <%= @classified.headline %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @classified.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_classified_path(@classified) %> |
-<%= link_to 'Back', classifieds_path %>
+<div class="span2">
+	<table class="table">
+		<tr>
+			<td><img src="http://lorempixel.com/120/120/city/1"></td>
+		</tr>
+		<tr>
+			<td><img src="http://lorempixel.com/120/120/city/2"></td>
+		</tr>
+		<tr>
+			<td><img src="http://lorempixel.com/120/120/city/3"></td>
+		</tr>
+		<tr>
+			<td><img src="http://lorempixel.com/120/120/city/4"></td>
+		</tr>
+	</table>
+</div>
+<div class="span6">
+	<h3>
+		<%= @classified.headline %>
+	</h3>
+	<p>
+		<%= @classified.content %>
+	</p>
+</div>
+<div class="span4">
+	<%= link_to 'Reserve This Rental', '', class: 'btn btn-success btn-block btn-large' %>
+	<br>
+	<%= link_to 'Edit', edit_classified_path(@classified) %> |
+	<%= link_to 'Back', classifieds_path %>
+</div>
