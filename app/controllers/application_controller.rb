@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	before_filter :meta_defaults
   protect_from_forgery
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -18,6 +19,14 @@ class ApplicationController < ActionController::Base
       else
         root_path
     end
+  end
+  
+    
+
+ def meta_defaults
+    @meta_title = "Rent Tallahassee"
+    @meta_keywords = "Tallahassee, rent, apartments, houses, condos, lease, sublet, sublease, realestate, listings"
+    @meta_description = "Use Rent-Tallahassee.com to find Apartments, Condos, and Houses for rent. Special Offers! Sublease from students. Summer, Fall and Spring semester."
   end
   
 end

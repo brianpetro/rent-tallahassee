@@ -5,6 +5,7 @@ class ClassifiedsController < ApplicationController
   def index
     @classifieds = Classified.all
     @subscriber = Subscriber.new
+    @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @classifieds }
