@@ -1,4 +1,5 @@
 class SubscribersController < ApplicationController
+	load_and_authorize_resource
   # GET /subscribers
   # GET /subscribers.json
   def index
@@ -44,7 +45,7 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       if @subscriber.save
-        format.html { redirect_to @subscriber, notice: 'Subscriber was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Subscriber was successfully created.' }
         format.json { render json: @subscriber, status: :created, location: @subscriber }
       else
         format.html { render action: "new" }
