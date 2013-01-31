@@ -16,7 +16,7 @@ class ClassifiedsController < ApplicationController
   # GET /classifieds/1.json
   def show
     @classified = Classified.find(params[:id])
-
+		@meta_title = "#{@meta_title} - #{@classified.headline}"
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @classified }
