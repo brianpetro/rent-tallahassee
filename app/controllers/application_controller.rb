@@ -11,11 +11,11 @@ class ApplicationController < ActionController::Base
       when 'admin'
         users_path
       when 'silver'
-        content_silver_path
+        new_classified_path(plan: 'silver')
       when 'gold'
-        content_gold_path
+        new_classified_path(plan: 'gold')
       when 'platinum'
-        content_platinum_path
+        new_classified_path(plan: 'platinum')
       else
         root_path
     end
