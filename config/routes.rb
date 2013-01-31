@@ -19,4 +19,5 @@ ClassifiedSite::Application.routes.draw do
     put 'update_card', :to => 'registrations#update_card'
   end
   resources :users
+  match "/packages" => "home#index"
 end
