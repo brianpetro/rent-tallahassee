@@ -24,8 +24,12 @@
 	</p>
 </div>
 <div class="span4">
+	<% if user_signed_in? %>
+		<% if current_user.has_role? :admin %>
+			<%= link_to 'Edit this Rental', edit_classified_path(@classified), class: 'btn btn-block' %>
+		<% end %>
+	<% end %>
 	<%= link_to 'Reserve This Rental', '', class: 'btn btn-success btn-block btn-large' %>
-	<br>
-	<%= link_to 'Edit', edit_classified_path(@classified) %> |
-	<%= link_to 'Back', classifieds_path %>
+
+	<%= link_to 'Back', classifieds_path, class: 'btn btn-block' %>
 </div>
