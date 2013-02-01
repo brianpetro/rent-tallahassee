@@ -125,6 +125,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.0)
     rails (3.2.11)
       actionmailer (= 3.2.11)
       actionpack (= 3.2.11)
@@ -227,6 +228,7 @@ DEPENDENCIES
   launchy (>= 2.1.2)
   pg
   quiet_assets (>= 1.0.1)
+  railroady
   rails (= 3.2.11)
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
