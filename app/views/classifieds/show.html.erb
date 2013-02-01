@@ -23,7 +23,7 @@
 					<h3 id="myModalLabel">image1</h3>
 				</div>
 				<div class="modal-body">
-					<img src="http://lorempixel.com/120/120/city/1">
+					<img src="http://lorempixel.com/120/120/city/2">
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -38,7 +38,7 @@
 					<h3 id="myModalLabel">image1</h3>
 				</div>
 				<div class="modal-body">
-					<img src="http://lorempixel.com/120/120/city/1">
+					<img src="http://lorempixel.com/120/120/city/3">
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -64,4 +64,7 @@
 	<%= link_to 'Reserve This Rental', '', class: 'btn btn-success btn-block btn-large' %>
 
 	<%= link_to 'Back', classifieds_path, class: 'btn btn-block' %>
+	<div class="" style="max-width:100%;">
+		<div class="fb-comments" data-href="http://www.Rent-Tallahassee.com/classifieds/<%= "#{@classified.id}-#{@classified.headline}".parameterize %>" data-width="350" data-num-posts="2"></div>
+	</div>
 </div>
