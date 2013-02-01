@@ -18,7 +18,10 @@
 							<img src="http://lorempixel.com/40/40/city/4">
 						</li>
 					</ul>
-					<%= link_to 'Show', classified, class: 'btn btn-inverse btn-block' %>
+					<%= link_to 'Show', classified, class: 'btn btn-info btn-block' %>
+					<button type="button" class="btn btn-success btn-block" data-toggle="collapse" data-target="#fbc-<%= classified.id %>">
+						Leave a Comment
+					</button>
 					<% if user_signed_in? %>
 						<% if current_user.has_role? :admin %>
 							<div class="pull-right">
@@ -27,6 +30,7 @@
 							</div>
 						<% end %>
 					<% end %>
+					<div id="fbc-<%= classified.id %>"class="fb-comments collapse" data-href="http://www.Rent-Tallahassee.com/classifieds/<%= "#{classified.id}-#{classified.headline}".parameterize %>" data-width="470" data-num-posts="2"></div>
 				</div>
 			</td>
 		</tr>
