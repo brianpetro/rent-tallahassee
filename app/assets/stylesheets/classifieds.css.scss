@@ -17,3 +17,10 @@
     float: right;
 }
 
+// Style Facebook comments on listings
+.listing-comments div {
+		opacity:0.9; 
+		border-radius:0.5em;
+		background-color:#ffffff; 
+		margin-top:0.5em;
+}
