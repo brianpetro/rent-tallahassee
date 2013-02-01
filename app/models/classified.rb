@@ -4,4 +4,7 @@ class Classified < ActiveRecord::Base
   accepts_nested_attributes_for :subscribers
   has_many :feed_entries
   
+  def to_param
+  	"#{id}-#{headline}".parameterize
+  end
 end
