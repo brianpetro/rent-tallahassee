@@ -1,6 +1,33 @@
-<h1>Editing site</h1>
+<div class="span10 offset1">
+	<h1>Editing site <%= link_to 'Exit Editor', @site, class: 'btn' %></h1>
+</div>
+<div class="span10 offset1">
+	<div class="well" style="text-align:center;">
+		<h2><%= best_in_place @site, :hero_unit %></h2>
+	</div>
+</div>
 
-<%= render 'form' %>
+<div class="span7 offset1">	
+	<%= render 'classifieds/display-table' %>
 
-<%= link_to 'Show', @site %> |
-<%= link_to 'Back', sites_path %>
+</div>
+<div class="span3">
+	<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
+	<div class="well well-small">
+		<h3><%= best_in_place @site, :call_to_subscribe %></h3>
+			<%= render 'subscribers/form' %>
+	</div>
+	<div class="well well-small">
+		<h4><%= best_in_place @site, :side_box_1_title %></h4>
+		<span class="lead"><%= best_in_place @site, :side_box_1_text, type: :textarea %></span>
+	</div>
+	<div class="well well-small">
+		<%= link_to 'Browse Packages', '/packages', class: 'btn btn-danger btn-block btn-large' %>
+	</div>
+	<div class="well">
+		<h5><%= best_in_place @site, :side_box_2_title %></h5>
+		<%= best_in_place @site, :side_box_2_text, type: :textarea %>
+	</div>	
+</div>
+
+
