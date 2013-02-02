@@ -16,9 +16,9 @@ ClassifiedSite::Application.routes.draw do
   get "content/silver"
   get "content/platinum"
   authenticated :user do
-    root :to => 'classifieds#index'
+    root :to => 'sites#show'
   end
-  root :to => "classifieds#index"
+  root :to => "sites#show"
   devise_for :users, :controllers => { :registrations => 'registrations' }
   devise_scope :user do
     put 'update_plan', :to => 'registrations#update_plan'
