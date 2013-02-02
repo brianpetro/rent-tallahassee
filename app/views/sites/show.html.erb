@@ -1,10 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="span10 offset1">
+	<div class="well" style="text-align:center;">
+		<h2>Listing Tallahassee Apartments, Condos, and Houses for Rent.</h2>
+	</div>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @site.name %>
-</p>
+<div class="span7 offset1">	
+	<%= render 'classifieds/display-table' %>
 
-
-<%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>
+</div>
+<div class="span3">
+	<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
+	<div class="well well-small">
+		<h3>Connect with Rent Tallahassee for Listings via Email.</h3>
+			<%= render 'subscribers/form' %>
+	</div>
+	<div class="well well-small">
+		<h4>Get Listed</h4>
+		<span class="lead">Use the button below to list a rental property on this page!</span>
+	</div>
+	<div class="well well-small">
+		<%= link_to 'Browse Packages', '/packages', class: 'btn btn-danger btn-block btn-large' %>
+	</div>
+	<div class="well">
+		<h5>Post a Listing</h5>
+		<ol>
+			<li>Create a New Classified.</li>
+			<li>Make sure you include these specifics in the listing.</li>
+			<li>Complete 'Payment for Review' and get listed!</li>
+		</ol>
+	</div>	
+</div>
