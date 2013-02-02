@@ -13,7 +13,11 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
-    @site = Site.find(params[:id])
+  	if params[:id] != nil
+    	@site = Site.find(params[:id])
+    else
+    	@site = Site.find_by_id(1)
+    end
     @classifieds = Classified.all
     @subscriber = Subscriber.new
     @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
@@ -68,10 +72,10 @@ class SitesController < ApplicationController
     respond_to do |format|
       if @site.update_attributes(params[:site])
         format.html { redirect_to @site, notice: 'Site was successfully updated.' }
-        format.json { head :no_content }
+        format.json { respond_with_bip(@site) }
       else
         format.html { render action: "edit" }
-        format.json { render json: @site.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@site) }
       end
     end
   end
