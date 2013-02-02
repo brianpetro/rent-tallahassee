@@ -11,22 +11,18 @@
 <div class="span3">
 	<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
 	<div class="well well-small">
-		<h3>Connect with Rent Tallahassee for Listings via Email.</h3>
+		<h3><%= @site.call_to_subscribe %></h3>
 			<%= render 'subscribers/form' %>
 	</div>
 	<div class="well well-small">
-		<h4>Get Listed</h4>
-		<span class="lead">Use the button below to list a rental property on this page!</span>
+		<h4><%= @site.side_box_1_title %></h4>
+		<span class="lead"><%= @site.side_box_1_text %></span>
 	</div>
 	<div class="well well-small">
 		<%= link_to 'Browse Packages', '/packages', class: 'btn btn-danger btn-block btn-large' %>
 	</div>
 	<div class="well">
-		<h5>Post a Listing</h5>
-		<ol>
-			<li>Create a New Classified.</li>
-			<li>Make sure you include these specifics in the listing.</li>
-			<li>Complete 'Payment for Review' and get listed!</li>
-		</ol>
+		<h5><%= @site.side_box_2_title %></h5>
+		<%= raw @site.side_box_2_text %>
 	</div>	
 </div>
