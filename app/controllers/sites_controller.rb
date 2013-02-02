@@ -38,6 +38,10 @@ class SitesController < ApplicationController
   # GET /sites/1/edit
   def edit
     @site = Site.find(params[:id])
+    @classifieds = Classified.all
+    @subscriber = Subscriber.new
+    @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
+    @web_results = FeedEntry.all(:limit => 10, :order => "published_at desc")
   end
 
   # POST /sites
