@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def admin
+  def owner
   	
   end
 end
