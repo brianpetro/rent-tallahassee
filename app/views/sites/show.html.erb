@@ -8,10 +8,9 @@
 	<%= render 'classifieds/display-table' %>
 </div>
 <div class="span3">
-	<% if user_signed_in? %>
-		<% if current_user.has_role? :admin %>
-			<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
-		<% end %>
+	<div class="admin">
+		<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
+	</div>
 	<% end %>
 	<div class="well well-small">
 		<h3><%= @site.call_to_subscribe %></h3>
