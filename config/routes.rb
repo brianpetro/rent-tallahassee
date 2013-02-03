@@ -1,15 +1,10 @@
 ClassifiedSite::Application.routes.draw do
+	match "/users/current" => "users#owner"
+
   resources :sites
-
-
   resources :feed_entries
-
-
   resources :subscribers
-
-
   resources :classifieds
-
 
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
