@@ -11,7 +11,6 @@
 	<div class="owner">
 		<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
 	</div>
-	<% end %>
 	<div class="well well-small">
 		<h3><%= @site.call_to_subscribe %></h3>
 			<%= render 'subscribers/form' %>
