@@ -5,5 +5,5 @@ jQuery ->
 	$('.best_in_place').best_in_place()
 	
 jQuery ->
-	if $('.admin').length
+	if $('.owner').length
 		$.getScript('/users/current')
