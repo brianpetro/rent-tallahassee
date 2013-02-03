@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+  caches_page :show
 	load_and_authorize_resource
   # GET /sites
   # GET /sites.json
