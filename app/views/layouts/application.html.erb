@@ -7,7 +7,7 @@
 		<meta name="description" content="<%= @meta_description %>" />
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags unless @page_caching %>
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
@@ -23,7 +23,7 @@
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
-          <%= render 'layouts/navigation' %>
+          <%= render 'layouts/navigation' unless @page_caching %>
         </div>
       </nav>
     </header>
