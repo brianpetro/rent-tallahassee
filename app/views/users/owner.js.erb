@@ -1,2 +1,6 @@
-$('.owner').show();
-
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+		$('.owner').show();
+	<% end %>
+<% end %>
+$('nav div.container').prepend('<%=j render 'layouts/navigation' %>')
