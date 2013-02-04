@@ -15,6 +15,7 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
+  	@page_caching = true
   	if params[:id] != nil
     	@site = Site.find(params[:id])
     else
