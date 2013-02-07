@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
  def meta_defaults
     @meta_title = "Rent Tallahassee"
     @meta_keywords = "Tallahassee, rent, apartments, houses, condos, lease, sublet, sublease, realestate, listings"
-    @meta_description = "Use Rent-Tallahassee.com to find Apartments, Condos, and Houses for rent. Special Offers! Sublease from students. Summer, Fall and Spring semester."
+    @meta_description = "Use Rent-Tallahassee.com to find Apartments, Condos, Townhomes and Houses for rent. Special Offers! Sublease from students. Summer, Fall and Spring semester. Apartments near Florida State FSU, TCC, and FAMU. Find the best deals here."
   end
   
 end
