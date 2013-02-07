@@ -6,7 +6,8 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     else
-    	can :read, Site
+    	can :manage, Site
+    	can :read, FeedEntry
     	can :read, Classified
     	can :create, Subscriber
 			if user.has_role? :silver
