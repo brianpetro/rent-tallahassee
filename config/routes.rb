@@ -1,6 +1,6 @@
 ClassifiedSite::Application.routes.draw do
 	match "/users/current" => "users#owner"
-
+	match "/sites/sitemap" => "sites#sitemap"
   resources :sites
   resources :feed_entries
   resources :subscribers
