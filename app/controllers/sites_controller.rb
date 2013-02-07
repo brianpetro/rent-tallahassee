@@ -14,7 +14,7 @@ class SitesController < ApplicationController
   end
 
 	def sitemap
-		@web_results = FeedEntry.all
+		@feed_entries = FeedEntry.all
 		respond_to do |format|
 			format.xml
 		end

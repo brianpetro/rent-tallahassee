@@ -1,4 +1,5 @@
 class FeedEntriesController < ApplicationController
+	load_and_authorize_resource
   # GET /feed_entries
   # GET /feed_entries.json
   def index
