@@ -1,0 +1,22 @@
+<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<url>
+		<loc>http://www.Rent-Tallahassee.com</loc>
+		<lastmod>2013-02-02T17:00:03-05:00</lastmod>
+		<changefreq>always</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<% @web_results.each do |web| %>
+		<url>
+			<loc>http://www.Rent-Tallahassee.com/classifieds/<%= web.id %>-<%= web.name.parameterize %></loc>
+			<lastmod>2013-02-02T17:00:03-05:00</lastmod>
+			<changefreq>daily</changefreq>
+			<priority>0.9</priority>
+		</url>
+	<% end %>
+	<url>
+		<loc>http://www.Rent-Tallahassee.com/packages</loc>
+		<lastmod>2013-02-02T17:00:03-05:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+</urlset>
