@@ -13,7 +13,7 @@ class FeedEntriesController < ApplicationController
   # GET /feed_entries/1
   # GET /feed_entries/1.json
   def show
-    @feed_entry = FeedEntry.find(params[:id])
+    @feed_entry = FeedEntry.find(params[:id].to_i)
 
     respond_to do |format|
       format.html # show.html.erb

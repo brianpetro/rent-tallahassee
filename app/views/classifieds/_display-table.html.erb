@@ -44,7 +44,7 @@
 				<div class="alert">
 					<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= web.name %> <%= web.url %>" class="twitter-hashtag-button pull-right" data-lang="en" data-related="jasoncosta">Tweet #RentTallahassee</a>
 					<ul class="unstyled">
-						<li><h4><%= link_to truncate(web.name, length: 140), web.url %></h4></li>
+						<li><h4><%= link_to truncate(web.name, length: 140), feed_entry_path(web) %></h4></li>
 						<li><%= raw web.summary %></li>
 						<li>
 						</li>
