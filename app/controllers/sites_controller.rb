@@ -13,6 +13,13 @@ class SitesController < ApplicationController
     end
   end
 
+	def sitemap
+		@web_results = FeedEntry.all
+		respond_to do |format|
+			format.xml
+		end
+	end
+
   # GET /sites/1
   # GET /sites/1.json
   def show
