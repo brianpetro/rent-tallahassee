@@ -5,7 +5,7 @@
 		<changefreq>always</changefreq>
 		<priority>1.0</priority>
 	</url>
-	<% @web_results.each do |web| %>
+	<% @feed_entries.each do |web| %>
 		<url>
 			<loc>http://www.Rent-Tallahassee.com/classifieds/<%= web.id %>-<%= web.name.parameterize %></loc>
 			<lastmod>2013-02-02T17:00:03-05:00</lastmod>
