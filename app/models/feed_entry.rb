@@ -1,5 +1,5 @@
 class FeedEntry < ActiveRecord::Base
-  attr_accessible :guid, :name, :published_at, :summary, :url
+  attr_accessible :guid, :name, :published_at, :summary, :url, :site_id
   
 
 	def self.update_from_feed(site_id, feed_url)
