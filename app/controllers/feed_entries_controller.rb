@@ -15,6 +15,7 @@ class FeedEntriesController < ApplicationController
   # GET /feed_entries/1.json
   def show
     @feed_entry = FeedEntry.find(params[:id].to_i)
+    @feed_entries = FeedEntry.all(:limit => 10, :order => "published_at desc")
 
     respond_to do |format|
       format.html # show.html.erb
