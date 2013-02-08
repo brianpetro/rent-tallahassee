@@ -14,19 +14,19 @@
 <div class="span3">
 	<%= link_to 'Edit Site', edit_site_path(@site), class: 'btn btn-block' %>
 	<div class="well well-small">
-		<h3><%= best_in_place @site, :call_to_subscribe, type: :textarea %></h3>
+		<h3><%= best_in_place @site, :call_to_subscribe, type: :textarea, nil: 'Make call to enter email.' %></h3>
 			<%= render 'subscribers/form' %>
 	</div>
 	<div class="well well-small">
-		<h4><%= best_in_place @site, :side_box_1_title %></h4>
-		<span class="lead"><%= best_in_place @site, :side_box_1_text, type: :textarea %></span>
+		<h4><%= best_in_place @site, :side_box_1_title, nil: 'Side Box1 Title' %></h4>
+		<span class="lead"><%= best_in_place @site, :side_box_1_text, type: :textarea, nil: 'Enter Side Box Text' %></span>
 	</div>
 	<div class="well well-small">
 		<%= link_to 'Browse Packages', '/packages', class: 'btn btn-danger btn-block btn-large' %>
 	</div>
 	<div class="well">
-		<h5><%= best_in_place @site, :side_box_2_title %></h5>
-		<%= best_in_place @site, :side_box_2_text, type: :textarea, sanitize: false %>
+		<h5><%= best_in_place @site, :side_box_2_title, nil: 'Side Box2 Title' %></h5>
+		<%= best_in_place @site, :side_box_2_text, type: :textarea, sanitize: false, nil: 'Sidebox Unsanitized for use with html' %>
 	</div>	
 </div>
 
