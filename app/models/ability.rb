@@ -7,6 +7,7 @@ class Ability
       can :manage, :all
     else
     	can :manage, Site
+    	cannot :create, Site
     	can :read, FeedEntry
     	can :read, Classified
     	can :create, Subscriber
