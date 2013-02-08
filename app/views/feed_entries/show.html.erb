@@ -30,7 +30,7 @@
 				<% @feed_entries.each do |feed| %>
 					<ul class="unstyled lead">
 						<li>
-							<%= link_to truncate(feed.name, length: 50), feed_entry_path(feed.id) %>
+							<%= link_to truncate(feed.name, length: 50), feed_entry_path("#{feed.id}-#{feed.name.parameterize}") %>
 						</li>
 					</ul>
 				<% end %>
