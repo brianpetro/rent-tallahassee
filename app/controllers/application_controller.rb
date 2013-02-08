@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 		if request.url.split('?').first == 'http://localhost:3000/users/current'
 			@site_name = "Localhost"
 		end
-		if request.url.split('?').first == 'http://www.rent-tallahassee.com'
+		if request.url.split('?').first == 'http://www.rent-tallahassee.com/users/current'
 			@site_name = "Rent Tallahassee"
 		end
 	end
