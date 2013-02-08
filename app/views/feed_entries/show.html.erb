@@ -1,23 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="span6 offset1">
+	<p>
+		<b>Name:</b>
+		<%= @feed_entry.name %>
+	</p>
 
-<p>
-  <b>Name:</b>
-  <%= @feed_entry.name %>
-</p>
+	<p>
+		<%= raw @feed_entry.summary %>
+	</p>
 
-<p>
-  <%= raw @feed_entry.summary %>
-</p>
+	<p>
+		<a href="<%= @feed_entry.url %>">See More</a>
+	</p>
 
-<p>
-  <a href="<%= @feed_entry.url %>">See More</a>
-</p>
-
-<p>
-  <b>Published at:</b>
-  <%= @feed_entry.published_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_feed_entry_path(@feed_entry), class: 'btn btn-small btn-primary' %> |
-<%= link_to 'Back', feed_entries_path, class: 'btn btn-small btn-primary' %>
+	<p>
+		<b>Published at:</b>
+		<%= @feed_entry.published_at %>
+	</p>
+	
+</div>
+<div class="span4">
+	<%= link_to 'Back', site_path(@feed_entry.site_id), class: 'btn btn-small btn-primary btn-block' %>
+	<div class="listing-comments">
+		<div class="fb-comments" data-href="http://www.Rent-Tallahassee.com/feed_entries/<%= "#{@feed_entry.id}-#{@feed_entry.name}".parameterize %>" data-width="350" data-num-posts="2"></div>
+	</div>
+</div>
