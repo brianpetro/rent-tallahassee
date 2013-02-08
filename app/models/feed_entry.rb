@@ -4,7 +4,7 @@ class FeedEntry < ActiveRecord::Base
 
 	def self.update_from_feed(feed_url, site_id)
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-		feed.items.each do |entry|
+		feed.entries.each do |entry|
 		  unless exists? :guid => entry.id
 		    create!(
 		      :name         => entry.title,
