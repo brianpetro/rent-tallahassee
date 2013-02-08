@@ -24,11 +24,15 @@ class SitesController < ApplicationController
   # GET /sites/1.json
   def show
   	@page_caching = true
-  	unless request.url.split('.com').first == 'http://www.rent-tallahassee'
-    	@site = Site.find_by_id(2)
-    else
+  	if @site_name = "Localhost"
     	@site = Site.find_by_id(1)
-    end
+   	end
+   	if @site_name = "Rent Tallahassee"
+    	@site = Site.find_by_id(1)
+   	end
+   	if @site_name = "Fracking Jobs"
+    	@site = Site.find_by_id(2)
+   	end
     @classifieds = Classified.all
     @subscriber = Subscriber.new
     @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
