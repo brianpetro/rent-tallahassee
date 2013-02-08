@@ -24,8 +24,8 @@ class SitesController < ApplicationController
   # GET /sites/1.json
   def show
   	@page_caching = true
-  	if params[:id] != nil
-    	@site = Site.find(params[:id])
+  	unless request.url.split('.com').first == 'http://www.rent-tallahassee'
+    	@site = Site.find_by_id(2)
     else
     	@site = Site.find_by_id(1)
     end
