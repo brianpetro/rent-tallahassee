@@ -2,7 +2,7 @@ class FeedEntry < ActiveRecord::Base
   attr_accessible :guid, :name, :published_at, :summary, :url
   
 
-	def self.update_from_feed(site, feed_url)
+	def self.update_from_feed(site_id, feed_url)
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 		feed.entries.each do |entry|
 		  unless exists? :guid => entry.id
@@ -12,7 +12,7 @@ class FeedEntry < ActiveRecord::Base
 		      :url          => entry.url,
 		      :published_at => entry.published,
 		      :guid         => entry.entry_id,
-		      :site_id      => site
+		      :site_id      => site_id
 		    )
 		  end
 		end
