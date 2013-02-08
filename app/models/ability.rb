@@ -8,6 +8,8 @@ class Ability
     else
     	can :manage, Site
     	cannot :create, Site
+    	cannot :update, Site
+    	cannot :destroy, Site
     	can :read, FeedEntry
     	can :read, Classified
     	can :create, Subscriber
