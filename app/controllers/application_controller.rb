@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
 		if request.url.split('.com').first == 'http://www.rent-tallahassee'
 			@site_name = "Rent Tallahassee"
 		end
+		if request.url.split('.com').first == 'http://www.findfrackingjobs'
+			@site_name = "Fracking Jobs"
+		end
 	end
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
