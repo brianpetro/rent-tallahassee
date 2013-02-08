@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 			@site_name = "Rent Tallahassee"
 		end
 		if request.url.split('.com').first == 'http://www.findfrackingjobs'
-			@site_name = "Find Fracking Jobs"
+			@site_name = "Fracking Jobs"
 		end
 	end
   rescue_from CanCan::AccessDenied do |exception|
