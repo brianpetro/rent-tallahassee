@@ -1,7 +1,15 @@
 class ApplicationController < ActionController::Base
 	before_filter :meta_defaults
   protect_from_forgery
-
+  before_filter :site_name
+  def site_name
+		if request.url.split('?').first == 'http://localhost:3000/users/current'
+			@site_name = "Localhost"
+		end
+		if request.url.split('?').first == 'http://www.rent-tallahassee.com'
+			@site_name = "Rent Tallahassee"
+		end
+	end
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
   end
