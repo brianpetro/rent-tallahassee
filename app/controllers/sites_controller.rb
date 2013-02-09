@@ -28,7 +28,9 @@ class SitesController < ApplicationController
 		end
 		@classifieds = Classified.all
 	  @subscriber = Subscriber.new
-	  @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
+	  @meta_title = @site.meta_title
+	  @meta_keywords = @site.meta_keywords
+	  @meta_description = @site.meta_description
 	  @web_results = FeedEntry.where(site_id: @site.id).limit(15).order('created_at DESC')
     respond_to do |format|
       format.html # show.html.erb

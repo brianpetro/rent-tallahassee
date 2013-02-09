@@ -34,13 +34,11 @@ class ApplicationController < ActionController::Base
         root_path
     end
   end
-  
-    
 
  def meta_defaults
-    @meta_title = "Rent Tallahassee"
-    @meta_keywords = "Tallahassee, rent, apartments, houses, condos, lease, sublet, sublease, realestate, listings, find, fsu, famu, tcc, community college, florida state, townhomes, rentals, complexes, apts, near, campus, homes"
-    @meta_description = "Use Rent-Tallahassee.com to find Apartments, Condos, Townhomes and Houses for rent. Special Offers! Sublease from students. Summer, Fall and Spring semester. Apartments near Florida State FSU, TCC, and FAMU. Find the best deals here."
+    @meta_title = ""
+    @meta_keywords = ""
+    @meta_description = ""
   end
   
 end
