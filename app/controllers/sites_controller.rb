@@ -21,11 +21,15 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
-		@site = Site.find_by_domain(request.domain)
-    @classifieds = Classified.all
-    @subscriber = Subscriber.new
-    @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
-    @web_results = FeedEntry.all(:limit => 10, :order => "published_at desc")
+  	unless params[:id] != nil
+			@site = Site.find_by_domain(request.domain)
+		else
+			@site = Site.find(params[:id])
+		end
+		@classifieds = Classified.all
+	  @subscriber = Subscriber.new
+	  @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
+	  @web_results = FeedEntry.all(:limit => 10, :order => "published_at desc")
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @site }
