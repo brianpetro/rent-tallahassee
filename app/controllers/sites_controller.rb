@@ -24,9 +24,10 @@ class SitesController < ApplicationController
   # GET /sites/1.json
   def show
   	@page_caching = true
-  	@site = Site.find_by_id(2) if request.domain == "localhost"
+  	
 		@site = Site.find_by_id(1) if request.domain == "rent-tallahassee"
 		@site = Site.find_by_id(2) if request.domain == "findfrackingjobs"
+		@site = Site.find_by_id(2) if request.domain == "localhost"
     @classifieds = Classified.all
     @subscriber = Subscriber.new
     @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
