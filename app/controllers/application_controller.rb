@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
 		if request.domain == 'findfrackingjobs.com'
 			@site_name = "Fracking Jobs"
 		end
+		if request.domain == 'rent-philadelphia.com'
+			@site_name = "Rent Philadelphia"
+		end
 	end
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
