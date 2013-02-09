@@ -5,7 +5,7 @@ ClassifiedSite::Application.routes.draw do
   resources :feed_entries
   resources :subscribers
   resources :classifieds
-
+	match "/users/nav" => "users#nav"
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
   get "content/silver"
