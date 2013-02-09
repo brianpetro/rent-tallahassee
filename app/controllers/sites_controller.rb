@@ -1,6 +1,4 @@
 class SitesController < ApplicationController
-  caches_page :show
-  cache_sweeper :site_sweeper
 	load_and_authorize_resource
   # GET /sites
   # GET /sites.json
@@ -23,8 +21,6 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
-  	@page_caching = true
-  	
 		@site = Site.find_by_domain(request.domain)
     @classifieds = Classified.all
     @subscriber = Subscriber.new

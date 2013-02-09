@@ -1,4 +1,6 @@
 class FeedEntriesController < ApplicationController
+  caches_page :show
+  cache_sweeper :feed_entry_sweeper
 	load_and_authorize_resource
   # GET /feed_entries
   # GET /feed_entries.json
@@ -14,13 +16,14 @@ class FeedEntriesController < ApplicationController
   # GET /feed_entries/1
   # GET /feed_entries/1.json
   def show
+  	@page_caching = true
     @feed_entry = FeedEntry.find(params[:id].to_i)
     @feed_entries = FeedEntry.all(:limit => 10, :order => "published_at desc")
     @meta_title = "#{@meta_title} - #{@feed_entry.name}"
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @feed_entry }
+      format.json { rendfer json: @feed_entry }
     end
   end
 
