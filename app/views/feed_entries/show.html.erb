@@ -25,17 +25,19 @@
 		<tr>
 			<th><h2><%= link_to "More Tallahassee Listings", site_path(@feed_entry.site_id) %></h2></th>
 		</tr>
+		<% @feed_entries.each do |feed| %>
 		<tr>
 			<td>
-				<% @feed_entries.each do |feed| %>
+				
 					<ul class="unstyled lead">
 						<li>
 							<%= link_to truncate(feed.name, length: 50), feed_entry_path("#{feed.id}-#{feed.name.parameterize}") %>
 						</li>
 					</ul>
-				<% end %>
+				
 			</td>
 		</tr>
+		<% end %>
 	</table>
 </div>
 <div class="span4">
