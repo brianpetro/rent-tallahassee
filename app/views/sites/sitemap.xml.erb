@@ -10,6 +10,11 @@
 			<changefreq>always</changefreq>
 			<priority>1.0</priority>
 		</url>
+		<url>
+			<loc>http://www.Rent-San-Francisco.com</loc>
+			<changefreq>always</changefreq>
+			<priority>1.0</priority>
+		</url>
 		<% @feed_entries.each do |web| %>
 			<url>
 				<% if web.site_id == 1 %>
@@ -20,6 +25,9 @@
 				<% end %>
 				<% if web.site_id == 3 %>
 					<loc>http://www.Rent-Philadelphia.com/feed_entries/<%= web.id %>-<%= web.name.parameterize %></loc>
+				<% end %>
+				<% if web.site_id == 4 %>
+					<loc>http://www.Rent-San-Francisco.com/feed_entries/<%= web.id %>-<%= web.name.parameterize %></loc>
 				<% end %>
 				<changefreq>weekly</changefreq>
 				<priority>0.9</priority>
