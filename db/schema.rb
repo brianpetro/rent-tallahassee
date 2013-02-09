@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130209021341) do
+ActiveRecord::Schema.define(:version => 20130209031505) do
 
   create_table "classifieds", :force => true do |t|
     t.string   "headline"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130209021341) do
     t.text     "side_box_1_text"
     t.string   "side_box_2_title"
     t.text     "side_box_2_text"
+    t.string   "domain"
   end
 
   create_table "subscribers", :force => true do |t|
