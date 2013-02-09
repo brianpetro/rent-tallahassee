@@ -26,7 +26,7 @@ class SitesController < ApplicationController
   	@page_caching = true
   	
 		@site = Site.find_by_id(1) if request.domain == "rent-tallahassee.com"
-		@site = Site.find_by_id(2) if request.domain == "findfrackingjobs"
+		@site = Site.find_by_id(2) if request.domain == "findfrackingjobs.com"
 		@site = Site.find_by_id(2) if request.domain == "localhost"
     @classifieds = Classified.all
     @subscriber = Subscriber.new
