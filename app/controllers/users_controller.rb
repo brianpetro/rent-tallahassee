@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, except: :owner
+  before_filter :authenticate_user!, except: [:owner, :nav]
 
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
@@ -35,6 +35,9 @@ class UsersController < ApplicationController
   end
   
   def owner
+  	
+  end
+  def nav
   	
   end
 end
