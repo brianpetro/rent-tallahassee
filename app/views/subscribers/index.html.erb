@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Email</th>
-    <th></th>
+    <th>site_id</th>
     <th></th>
     <th></th>
   </tr>
@@ -11,9 +11,12 @@
 <% @subscribers.each do |subscriber| %>
   <tr>
     <td><%= subscriber.email %></td>
+    <td><%= subscriber.site_id %></td>
     <td><%= link_to 'Show', subscriber %></td>
-    <td><%= link_to 'Edit', edit_subscriber_path(subscriber) %></td>
-    <td><%= link_to 'Destroy', subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+		  <%= link_to 'Edit', edit_subscriber_path(subscriber) %>
+		  <%= link_to 'Destroy', subscriber, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
   </tr>
 <% end %>
 </table>

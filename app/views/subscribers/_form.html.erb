@@ -2,6 +2,7 @@
   <%= f.error_notification %>
 
     <%= f.input :email %>
+    <%= f.hidden_field :site_id, value: @site.id %>
     <%= f.button :submit, 'Continue', class: 'btn btn-primary' %>
     <div id="gplus">
     <div class="g-plusone" data-annotation="bubble" data-href="http://www.Rent-Tallahassee.com"></div>
