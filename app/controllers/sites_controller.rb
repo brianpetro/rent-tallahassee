@@ -29,7 +29,7 @@ class SitesController < ApplicationController
 		@classifieds = Classified.all
 	  @subscriber = Subscriber.new
 	  @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
-	  @web_results = FeedEntry.all(:limit => 10, :order => "published_at desc")
+	  @web_results = FeedEntry.where(site_id: @site.id).limit(15).order('created_at DESC')
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @site }
