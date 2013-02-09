@@ -25,7 +25,7 @@ class SitesController < ApplicationController
   def show
   	@page_caching = true
   	
-		@site = Site.find_by_id(1) if request.domain == "rent-tallahassee"
+		@site = Site.find_by_id(1) if request.domain == "rent-tallahassee.com"
 		@site = Site.find_by_id(2) if request.domain == "findfrackingjobs"
 		@site = Site.find_by_id(2) if request.domain == "localhost"
     @classifieds = Classified.all
