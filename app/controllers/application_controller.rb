@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :site_name
   def site_name
-		if request.url.split('?').first == 'http://localhost:3000/users/current'
+		if request.domain == 'localhost'
 			@site_name = "Localhost"
 		end
-		if request.url.split('.com').first == 'http://www.rent-tallahassee'
+		if request.domain == 'rent-tallahassee.com'
 			@site_name = "Rent Tallahassee"
 		end
-		if request.url.split('.com').first == 'http://www.findfrackingjobs'
+		if request.domain == 'findfrackingjobs.com'
 			@site_name = "Fracking Jobs"
 		end
 	end
