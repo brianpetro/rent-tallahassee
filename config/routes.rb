@@ -10,8 +10,17 @@ ClassifiedSite::Application.routes.draw do
   get "content/gold"
   get "content/silver"
   get "content/platinum"
-  authenticated :user do
-    root :to => 'sites#show'
+  constraints DomainConstraint.new('rent-tallahassee.com') do
+  	root :to => 'sites#show#1'
+  end
+  constraints DomainConstraint.new('localhost') do
+  	root :to => 'sites#show#3'
+  end
+  constraints DomainConstraint.new('findfrackingjobs.com') do
+  	root :to => 'sites#show#2'
+  end
+  constraints DomainConstraint.new('rent-philadelphia.com') do
+  	root :to => 'sites#show#3'
   end
   root :to => "sites#show"
   devise_for :users, :controllers => { :registrations => 'registrations' }
