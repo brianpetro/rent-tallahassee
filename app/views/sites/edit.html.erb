@@ -1,5 +1,5 @@
 <div class="span10 offset1">
-	<h1>Editing site <%= link_to 'Exit Editor', @site, class: 'btn' %></h1>
+	<h1>Editing <%= best_in_place @site, :domain, nil: 'Enter classified URL.' %> <%= link_to 'Exit Editor', @site, class: 'btn' %></h1>
 </div>
 <div class="span10 offset1">
 	<div class="well" style="text-align:center;">
