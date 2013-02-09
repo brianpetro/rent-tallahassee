@@ -1,6 +1,4 @@
 class SitesController < ApplicationController
-  caches_page :show
-  cache_sweeper :site_sweeper
 	load_and_authorize_resource
   # GET /sites
   # GET /sites.json
