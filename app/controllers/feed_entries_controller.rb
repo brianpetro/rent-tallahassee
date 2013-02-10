@@ -18,7 +18,7 @@ class FeedEntriesController < ApplicationController
   def show
   	@page_caching = true
     @feed_entry = FeedEntry.find(params[:id].to_i)
-    @feed_entries = FeedEntry.all(:limit => 10, :order => "published_at desc")
+    @feed_entries = FeedEntry.random
     @meta_title = "#{@meta_title} - #{@feed_entry.name}"
 
     respond_to do |format|
