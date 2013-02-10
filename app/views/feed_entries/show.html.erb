@@ -25,16 +25,18 @@
 		<tr>
 			<th><h2><%= link_to "More Listings", site_path(@feed_entry.site_id) %></h2></th>
 		</tr>
-		<% @feed_entries.find(site_id: @site.id) do |feed| %>
+		<% @feed_entries.each do |feed| %>
 		<tr>
 			<td>
-				
+				<% if feed.site_id == @site.id %>
 					<ul class="unstyled lead">
 						<li>
-							<%= link_to truncate(feed.name, length: 50), feed_entry_path("#{feed.id}-#{feed.name.parameterize}") %>
+							
+								<%= link_to truncate(feed.name, length: 50), feed_entry_path("#{feed.id}-#{feed.name.parameterize}") %>
+							
 						</li>
 					</ul>
-				
+				<% end %>
 			</td>
 		</tr>
 		<% end %>
