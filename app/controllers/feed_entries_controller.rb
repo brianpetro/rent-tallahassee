@@ -16,6 +16,7 @@ class FeedEntriesController < ApplicationController
   # GET /feed_entries/1
   # GET /feed_entries/1.json
   def show
+		@site = Site.find_by_domain(request.domain)
   	@page_caching = true
     @feed_entry = FeedEntry.find(params[:id].to_i)
     @feed_entries = FeedEntry.random
