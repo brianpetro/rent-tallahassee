@@ -25,7 +25,7 @@
 		<tr>
 			<th><h2><%= link_to "More Listings", site_path(@feed_entry.site_id) %></h2></th>
 		</tr>
-		<% @feed_entries.each do |feed| %>
+		<% @feed_entries.find(site_id: @site.id) do |feed| %>
 		<tr>
 			<td>
 				
