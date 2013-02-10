@@ -1,18 +1,5 @@
 class ClassifiedsController < ApplicationController
 	load_and_authorize_resource
-  # GET /classifieds
-  # GET /classifieds.json
-  def index
-    @classifieds = Classified.all
-    @subscriber = Subscriber.new
-    @meta_title = "#{@meta_title} - Apartments, Condos, and Houses"
-    @web_results = FeedEntry.all(:limit => 10, :order => "published_at desc")
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @classifieds }
-    end
-  end
-
   # GET /classifieds/1
   # GET /classifieds/1.json
   def show
