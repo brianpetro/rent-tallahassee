@@ -1,7 +1,11 @@
 class FeedEntry < ActiveRecord::Base
   attr_accessible :guid, :name, :published_at, :summary, :url, :site_id
   belongs_to :site
-  
+  def self.random
+  	if (c = count) != 0
+  		all limit: 10, order: "published_at desc", offset: rand(c)
+  	end
+  end
 
 	def self.update_from_feed(feed_url, site_id)
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
