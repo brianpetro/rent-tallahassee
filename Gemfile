@@ -40,3 +40,5 @@ gem 'sitemap_generator'
 gem 'feedzirra'
 gem 'best_in_place'
 gem 'newrelic_rpm'
+gem 'twitter'
+gem 'whenever', :require => false
