@@ -18,3 +18,15 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.hours do
+	runner "FeedEntry.rent_tallahassee"
+end
+
+every 1.hours do
+	runner "FeedEntry.rent_philadelphia"
+end
+
+every 1.hours do
+	runner "FeedEntry.rent_san_francisco"
+end
