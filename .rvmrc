@@ -46,3 +46,7 @@ fi
 # then
 #   bundle install | GREP_OPTIONS= \grep -vE '^Using|Your bundle is complete'
 # fi
+
+
+#Make Whenever gem not 'hang up'
+rvm_trust_rvmrcs_flag=1
