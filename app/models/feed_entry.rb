@@ -70,7 +70,13 @@ class FeedEntry < ActiveRecord::Base
 		    )
 		  end
 		end
-	end	
+	end
+	
+	def update_feed
+		FeedEntry.rent_tallahassee
+		FeedEntry.rent_san_francisco
+		FeedEntry.rent_philadelphia
+	end
 
 	def to_param
   	"#{id}-#{name}".parameterize
