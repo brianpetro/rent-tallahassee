@@ -39,6 +39,7 @@ class FeedEntry < ActiveRecord::Base
 		  end
 		end
 	end
+	
 	def self.rent_philadelphia
 		site_id = 3
 		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/pmi9l2i037isk7j/philadelphia-sub.xml?token_hash=AAGXKuKnxY-ajrA5JxFVDJLgJWCn19sKD2PXGHIw8zOzkg&dl=1")
@@ -55,6 +56,7 @@ class FeedEntry < ActiveRecord::Base
 		  end
 		end
 	end
+	
 	def self.rent_san_francisco
 		site_id = 4
 		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/e3mbj5b2c8j2ts5/sanfrancisco-sub.xml?token_hash=AAE9cIyXG0W5aZO4gaIrZTf6NqJPAhLZJet6J-oPy0tVFg&dl=1")
@@ -72,15 +74,7 @@ class FeedEntry < ActiveRecord::Base
 		end
 	end
 	
-	def run_update_feeds
-		FeedEntry.rent_tallahassee
-		FeedEntry.rent_san_francisco
-		FeedEntry.rent_philadelphia
-	end
-
 	def to_param
   	"#{id}-#{name}".parameterize
   end
-
-
 end
