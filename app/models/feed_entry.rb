@@ -1,6 +1,10 @@
 class FeedEntry < ActiveRecord::Base
   attr_accessible :guid, :name, :published_at, :summary, :url, :site_id
   belongs_to :site
+  def to_param
+  	"#{id}-#{name}".parameterize
+  end
+  
   def self.random
   	if (c = count) != 0
   		all limit: 10, order: "published_at desc", offset: rand(c)
@@ -74,7 +78,5 @@ class FeedEntry < ActiveRecord::Base
 		end
 	end
 	
-	def to_param
-  	"#{id}-#{name}".parameterize
-  end
+
 end
