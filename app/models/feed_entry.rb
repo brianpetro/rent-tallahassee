@@ -72,7 +72,7 @@ class FeedEntry < ActiveRecord::Base
 		end
 	end
 	
-	def update_feeds
+	def run_update_feeds
 		FeedEntry.rent_tallahassee
 		FeedEntry.rent_san_francisco
 		FeedEntry.rent_philadelphia
