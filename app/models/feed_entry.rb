@@ -29,7 +29,7 @@ class FeedEntry < ActiveRecord::Base
 	
 	def self.rent_tallahassee
 		site_id = 1
-		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/xaf86vxphcy89v4/tallahassee-sub.xml?token_hash=AAHhMy84t2cwxO2TTYYrrgEqjUdzfB5bVXXI7WdRZ_IGQw&dl=1")
+		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/ccvuhf27l1c7pos/tallahassee-sub.xml?token_hash=AAF18tRJe7lyr6sQi86rsxiiIntajcYcXM_oT7V46Uj4NA&dl=1")
 		feed.entries.each do |entry|
 		  unless exists? :guid => entry.id
 		    create!(
@@ -46,7 +46,7 @@ class FeedEntry < ActiveRecord::Base
 	
 	def self.rent_philadelphia
 		site_id = 3
-		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/pmi9l2i037isk7j/philadelphia-sub.xml?token_hash=AAGXKuKnxY-ajrA5JxFVDJLgJWCn19sKD2PXGHIw8zOzkg&dl=1")
+		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/3ywcpfp593kevvo/philadelphia-sub.xml?token_hash=AAGFpLIldBwxwKcp-7GdlJbzeY6GvSf3QB3LR6xxQ_b3OQ&dl=1")
 		feed.entries.each do |entry|
 		  unless exists? :guid => entry.id
 		    create!(
@@ -63,7 +63,7 @@ class FeedEntry < ActiveRecord::Base
 	
 	def self.rent_san_francisco
 		site_id = 4
-		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/e3mbj5b2c8j2ts5/sanfrancisco-sub.xml?token_hash=AAE9cIyXG0W5aZO4gaIrZTf6NqJPAhLZJet6J-oPy0tVFg&dl=1")
+		feed = Feedzirra::Feed.fetch_and_parse("https://dl.dropbox.com/s/bclct02mbl762lg/sanfrancisco-sub.xml?token_hash=AAFhS85MPmSWgA64Gsf7gL7dj6ZrXnhWuYjW4_-elXrAhQ&dl=1")
 		feed.entries.each do |entry|
 		  unless exists? :guid => entry.id
 		    create!(
