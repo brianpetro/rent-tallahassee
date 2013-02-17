@@ -1,0 +1,60 @@
+<table class="table table-hover">
+	<% @classifieds.each do |classified| %>
+		<% if classified.site_id == @site.id %>
+			<tr>
+				<td>
+					<div class="well">
+						<span class="badge badge-warning">Verified</span>
+						<div class="social pull-right">
+							<div class="fb-send" data-colorscheme="light" data-href="http://www.rent-tallahassee.com/classifieds/<%= classified.id %>"></div> 
+							<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= classified.headline %> http://rent-tallahassee.com/classifieds/<%= classified.id %>" class="twitter-hashtag-button" data-lang="en" data-related="jasoncosta" style="margin-bottom: -4px;">Tweet #RentTallahassee</a>
+						</div>
+						<ul class="unstyled">
+							<li><h4><%= link_to truncate(classified.headline, length: 140), classified_path(classified) %></h4></li>
+							<li><%= truncate classified.content, length: 100 %></li>
+							<li>
+								<img src="http://lorempixel.com/40/40/city/1">
+								<img src="http://lorempixel.com/40/40/city/2">
+								<img src="http://lorempixel.com/40/40/city/3">
+								<img src="http://lorempixel.com/40/40/city/4">
+							</li>
+						</ul>
+						<%= link_to 'Show', classified, class: 'btn btn-info btn-block' %>
+						<button type="button" class="btn btn-success btn-block" data-toggle="collapse" data-target="#fbc-<%= classified.id %>">
+							Leave a Comment
+						</button>
+						<% if user_signed_in? %>
+							<% if current_user.has_role? :admin %>
+								<div class="pull-right">
+									<%= link_to 'Edit', edit_classified_path(classified), class: 'btn btn-mini btn-danger' %>
+									<%= link_to 'Destroy', classified, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
+								</div>
+							<% end %>
+						<% end %>
+						<div id="fbc-<%= classified.id %>" class="listing-comments collapse">
+							<div class="fb-comments" data-href="http://www.Rent-Tallahassee.com/classifieds/<%= "#{classified.id}-#{classified.headline}".parameterize %>" data-width="420" data-num-posts="2"></div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		<% end %>
+	<% end %>
+	
+	<% @web_results.each do |web| %>
+		<tr>
+			<td>
+				<% if web.site_id == @site.id %>
+					<div class="alert">
+						<a href="https://twitter.com/intent/tweet?button_hashtag=RentTallahassee&text=<%= web.name %> <%= web.url %>" class="twitter-hashtag-button pull-right" data-lang="en" data-related="jasoncosta">Tweet #RentTallahassee</a>
+						<ul class="unstyled">
+							<li><h4><%= link_to truncate(web.name, length: 140), feed_entry_path(web) %></h4></li>
+							<li><%= raw web.summary %></li>
+							<li>
+							</li>
+						</ul>
+					</div>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>
