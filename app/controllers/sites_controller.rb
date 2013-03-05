@@ -32,7 +32,7 @@ class SitesController < ApplicationController
 	  @meta_keywords = @site.meta_keywords
 	  @meta_description = @site.meta_description
 	  @site_results = FeedEntry.where(site_id: @site.id).order("created_at DESC")
-	  @web_results = @site_results.page(params[:page]).per_page(5)
+	  @web_results = @site_results.page(params[:page]).per_page(10)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @site }
